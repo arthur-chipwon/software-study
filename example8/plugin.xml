@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Hello Category"
+            id="net.demo.hello">
+      </category>
+      <view
+            id="net.demo.hello.HelloView"
+            name="EA\View - Say Hello"
+            icon="icons/sample.png"
+            class="net.demo.hello.HelloView"
+            category="net.demo.hello"
+            inject="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               id="net.demo.hello.HelloView"
+               relative="org.eclipse.ui.views.ProblemView"
+               relationship="right"
+               ratio="0.5">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+
+</plugin>
