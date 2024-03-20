@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IDE
+Bundle-SymbolicName: com.chirpwow.ide;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: CHIRPWOW
+Require-Bundle: org.eclipse.ui
+Automatic-Module-Name: com.chirpwow.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-17

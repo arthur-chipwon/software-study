@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.chirpwow.ide.feature"
+      label="IDE Feature"
+      version="1.0.0.qualifier"
+      provider-name="CHIRPWOW">
+
+   <description url="https://www.chirpwow.com/description">
+      ChirpWow IDE Feature
+   </description>
+
+   <copyright url="https://www.chirpwow.com/copyright">
+      Copyright (c) 2023 ChirpWow Technology Co., Ltd.
+   </copyright>
+
+   <license url="https://www.chirpwow.com/license">
+      ChirpWow Software License
+   </license>
+
+   <plugin
+         id="com.chirpwow.ide"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
