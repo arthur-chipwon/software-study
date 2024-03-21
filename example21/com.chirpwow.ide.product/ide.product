@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="RCP IDE App" uid="ide" id="com.chirpwow.ide.product" application="org.eclipse.e4.ui.workbench.swt.E4Application" version="1.0.0.qualifier" type="mixed" includeLaunchers="true" autoIncludeRequirements="true">
+
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-clearPersistedState
+      </programArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/com.chirpwow.ide/icons/orangecar16.png" i32="/com.chirpwow.ide/icons/orangecar32.png" i48="/com.chirpwow.ide/icons/orangecar48.png" i256="/com.chirpwow.ide/icons/orangecar256.png"/>
+
+   <splash
+      location="com.chirpwow.ide" />
+
+   <plugins>
+      <plugin id="com.chirpwow.ide"/>
+   </plugins>
+
+   <features>
+      <feature id="org.eclipse.e4.rcp"/>
+   </features>
+
+
+</product>
