@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.chirpwow.ide.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.chirpwow.ide.Perspective"
+            name="RCP Perspective"
+            id="com.chirpwow.ide.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.chirpwow.ide.application"
+            name="RCP IDE App">
+         <property
+               name="appName"
+               value="RCP IDE App">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/orangecar16.png,icons/orangecar32.png,icons/orangecar48.png,icons/orangecar256.png">
+         </property>
+      </product>
+   </extension>
+
+</plugin>
