@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="com.chirpwow.ide.commands.category"
+            name="Greeting">
+      </category>
+      <command
+            categoryId="com.chirpwow.ide.commands.category"
+            name="Greeting"
+            id="com.chirpwow.ide.commands.greetingCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.chirpwow.ide.handlers.GreetingHandler"
+            commandId="com.chirpwow.ide.commands.greetingCommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.chirpwow.ide.commands.greetingCommand"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               id="com.chirpwow.ide.menus.modelMenu"
+               label="Model"
+               mnemonic="M">
+            <command
+                  commandId="com.chirpwow.ide.commands.greetingCommand"
+                  icon="icons/globe.png"
+                  id="com.chirpwow.ide.menus.greetingCommand"
+                  mnemonic="S"
+                  tooltip="Greeting from ChirpWow">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="com.chirpwow.ide.toolbars.greetingToolbar">
+            <command
+                  id="com.chirpwow.ide.toolbars.greetingCommand"
+                  commandId="com.chirpwow.ide.commands.greetingCommand"
+                  icon="icons/globe.png"
+                  tooltip="Greeting from ChirpWow">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.ui.ide.workbench"
+            name="Logic Insight for MCU C Developers">
+         <property
+               name="windowImages"
+               value="icons/orangecar16.png,icons/orangecar32.png,icons/orangecar48.png,icons/orangecar256.png">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/greyrace_lg.png">
+         </property>
+         <property
+               name="appName"
+               value="Logic Insight for MCU C Developers">
+         </property>
+         <property
+               name="aboutText"
+               value="Logic Insight™&#x0A;Version: 0.0.1&#x0A;Build id: 2309.1.0&#x0A;&#x0A;Copyright © 2023 ChirpWow Technology Co., Ltd.  All rights reserved.&#x0A;https://www.chirpwow.com/&#x0A;&#x0A;This product includes software developed by the Eclipse Foundation.&#x0A;https://www.eclipse.org/&#x0A;&#x0A;This product includes software developed by the Apache Software Foundation.&#x0A;https://www.apache.org/">
+         </property>
+      </product>
+   </extension>
+
+</plugin>
