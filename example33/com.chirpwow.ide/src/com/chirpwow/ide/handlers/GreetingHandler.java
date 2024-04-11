@@ -15,7 +15,7 @@ public class GreetingHandler extends AbstractHandler {
 		MessageDialog.openInformation(
 				window.getShell(),
 				"IDE",
-				"Hello, Chirpwow's partner!");
+				"Hello, ChirpWow's partner!");
 		return null;
 	}
 }
