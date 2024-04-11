@@ -65,7 +65,7 @@
          point="org.eclipse.core.runtime.products">
       <product
             application="org.eclipse.ui.ide.workbench"
-            name="Logic Insight for MCU C Developers">
+            name="Logic Insight">
          <property
                name="windowImages"
                value="icons/orangecar16.png,icons/orangecar32.png,icons/orangecar48.png,icons/orangecar256.png">
@@ -76,7 +76,7 @@
          </property>
          <property
                name="appName"
-               value="Logic Insight for MCU C Developers">
+               value="Logic Insight">
          </property>
          <property
                name="aboutText"

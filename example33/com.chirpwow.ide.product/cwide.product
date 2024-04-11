@@ -135,6 +135,7 @@ https://www.apache.org/
    </plugins>
 
    <features>
+      <feature id="com.chirpwow.ide.feature"/>
       <feature id="org.eclipse.platform"/>
       <feature id="org.eclipse.equinox.p2.user.ui"/>
       <feature id="org.eclipse.emf.ecore"/>
@@ -150,7 +151,6 @@ https://www.apache.org/
       <feature id="org.eclipse.ecf.core.ssl.feature"/>
       <feature id="org.eclipse.ecf.filetransfer.ssl.feature"/>
       <feature id="org.eclipse.e4.rcp"/>
-      <feature id="com.chirpwow.ide.feature"/>
    </features>
 
    <configurations>
