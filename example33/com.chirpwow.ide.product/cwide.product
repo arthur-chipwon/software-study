@@ -34,7 +34,10 @@ https://www.apache.org/
    <windowImages i16="/com.chirpwow.ide/icons/orangecar16.png" i32="/com.chirpwow.ide/icons/orangecar32.png" i48="/com.chirpwow.ide/icons/orangecar48.png" i256="/com.chirpwow.ide/icons/orangecar256.png"/>
 
    <splash
-      location="com.chirpwow.ide" />
+      location="com.chirpwow.ide"
+      startupProgressRect="2,290,448,10"
+      startupMessageRect="7,265,320,20"
+      startupForegroundColor="FF8000" />
    <launcher>
       <win useIco="false">
          <bmp/>
@@ -62,6 +65,7 @@ https://www.apache.org/
       <plugin id="org.apache.batik.css"/>
       <plugin id="org.apache.batik.i18n"/>
       <plugin id="org.apache.batik.util"/>
+      <plugin id="org.apache.commons.commons-io"/>
       <plugin id="org.apache.commons.io"/>
       <plugin id="org.apache.commons.jxpath"/>
       <plugin id="org.apache.commons.logging"/>
