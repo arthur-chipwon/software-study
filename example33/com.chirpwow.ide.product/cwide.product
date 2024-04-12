@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Logic Insight" uid="com.chirpwow.ide.product" id="org.eclipse.platform.ide" application="org.eclipse.ui.ide.workbench" version="1.0.0.qualifier" type="mixed" includeLaunchers="true" autoIncludeRequirements="true">
+<product name="Logic Insight" uid="com.chirpwow.ide.product" id="com.chirpwow.ide.product" application="org.eclipse.ui.ide.workbench" version="1.0.0.qualifier" type="mixed" includeLaunchers="true" autoIncludeRequirements="true">
 
    <aboutInfo>
       <image path="/com.chirpwow.ide/icons/greyrace_lg.png"/>
@@ -27,6 +27,8 @@ https://www.apache.org/
    <launcherArgs>
       <vmArgs>-Xms256m -Xmx1024m
       </vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
    </launcherArgs>
 
    <windowImages i16="/com.chirpwow.ide/icons/orangecar16.png" i32="/com.chirpwow.ide/icons/orangecar32.png" i48="/com.chirpwow.ide/icons/orangecar48.png" i256="/com.chirpwow.ide/icons/orangecar256.png"/>
@@ -60,7 +62,7 @@ https://www.apache.org/
       <plugin id="org.apache.batik.css"/>
       <plugin id="org.apache.batik.i18n"/>
       <plugin id="org.apache.batik.util"/>
-      <plugin id="org.apache.commons.commons-io"/>
+      <plugin id="org.apache.commons.io"/>
       <plugin id="org.apache.commons.jxpath"/>
       <plugin id="org.apache.commons.logging"/>
       <plugin id="org.apache.felix.scr"/>
@@ -160,6 +162,7 @@ https://www.apache.org/
       <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="4" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <plugin id="org.eclipse.update.configurator" autoStart="true" startLevel="3" />
       <plugin id="slf4j.simple" autoStart="true" startLevel="2" />
       <property name="org.eclipse.update.reconcile" value="false" />
       <property name="osgi.bundles.defaultStartLevel" value="4" />
