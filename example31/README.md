@@ -9,9 +9,10 @@ and API baseline, next to run and launch this apllication on IDE.
 * **OpenJDK 17** [link](https://adoptium.net/)
 
 ## Structure of The Project
-* [${group_id}]
-* [${group_id}.feature]
-* [${group_id}.repository]
-* [${group_id}.product]
-* [${group_id}.target]
-* [${group_id}.test]
+<p>[${project_root}]<br />
+&emsp;|-> [${group_id}]<br />
+&emsp;|-> [${group_id}.feature]<br />
+&emsp;|-> [${group_id}.repository]<br />
+&emsp;|-> [${group_id}.product]<br />
+&emsp;|-> [${group_id}.target]<br />
+&emsp;|-> [${group_id}.test]</p>

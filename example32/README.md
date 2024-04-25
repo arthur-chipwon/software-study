@@ -9,12 +9,13 @@ Eclipse-Tycho architecture type.
 * **Apache Maven** [link](https://maven.apache.org/)
 
 ## Structure of The Project
-* [${group_id}]
-* [${group_id}.feature]
-* [${group_id}.repository]
-* [${group_id}.product]
-* [${group_id}.target]
-* [${group_id}.test]
+<p>[${project_root}]<br />
+&emsp;|-> [${group_id}]<br />
+&emsp;|-> [${group_id}.feature]<br />
+&emsp;|-> [${group_id}.repository]<br />
+&emsp;|-> [${group_id}.product]<br />
+&emsp;|-> [${group_id}.target]<br />
+&emsp;|-> [${group_id}.test]</p>
 
 ## Command-line Instructions for Project Creation
 
@@ -31,3 +32,4 @@ Therefore to package CWIDE do:
 ```
 mvn package
 ```
+and the resulting p2 repository will be in `${group_id}.repository/target/repository`.
