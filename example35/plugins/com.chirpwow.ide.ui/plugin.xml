@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+  Copyright (c) 2023 ChirpWow Technology Co., Ltd.
+
+  This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License 2.0
+  which accompanies this distribution, and is available at
+  https://www.eclipse.org/legal/epl-2.0/
+
+  SPDX-License-Identifier: EPL-2.0
+
+  Contributors:
+    Arthur Hsiao - ChirpWow Tech.
+-->
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="com.chirpwow.ide.ui.commands.category"
+            name="Greeting">
+      </category>
+      <command
+            categoryId="com.chirpwow.ide.ui.commands.category"
+            name="Greeting"
+            id="com.chirpwow.ide.ui.commands.greetingCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.chirpwow.ide.ui.handlers.GreetingHandler"
+            commandId="com.chirpwow.ide.ui.commands.greetingCommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.chirpwow.ide.ui.commands.greetingCommand"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               id="com.chirpwow.ide.ui.menus.modelMenu"
+               label="Model"
+               mnemonic="M">
+            <command
+                  commandId="com.chirpwow.ide.ui.commands.greetingCommand"
+                  icon="icons/globe.png"
+                  id="com.chirpwow.ide.ui.menus.greetingCommand"
+                  mnemonic="S"
+                  tooltip="Greeting from ChirpWow">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="com.chirpwow.ide.ui.toolbars.greetingToolbar">
+            <command
+                  id="com.chirpwow.ide.ui.toolbars.greetingCommand"
+                  commandId="com.chirpwow.ide.ui.commands.greetingCommand"
+                  icon="icons/globe.png"
+                  tooltip="Greeting from ChirpWow">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            id="com.chirpwow.ide.ui.preferences.CwPlatformPreferencePage"
+            name="CW Platform"
+            class="com.chirpwow.ide.ui.preferences.CwPlatformPreferencePage">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.chirpwow.ide.ui.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+
+</plugin>

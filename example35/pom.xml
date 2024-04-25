@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2023 ChirpWow Technology Co., Ltd.
+
+  This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License 2.0
+  which accompanies this distribution, and is available at
+  https://www.eclipse.org/legal/epl-2.0/
+
+  SPDX-License-Identifier: EPL-2.0
+
+  Contributors:
+    Arthur Hsiao - ChirpWow Tech.
+-->
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <!-- The Basics -->
+  <groupId>com.chirpwow.ide</groupId>
+  <artifactId>com.chirpwow.ide.parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+    <module>plugins/com.chirpwow.ide.ui</module>
+    <module>plugins/com.chirpwow.ide.core</module>
+    <module>features/com.chirpwow.ide.feature</module>
+    <module>releng/com.chirpwow.ide.repository</module>
+    <module>releng/com.chirpwow.ide.target</module>
+  </modules>
+  <properties>
+    <tycho.version>4.0.4</tycho.version>
+    <env.ui.test>-Xms512m -Xmx2048m</env.ui.test>
+  </properties>
+  <!-- Build Settings -->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-compiler-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <source>17</source>
+          <target>17</target>
+          <optimize>true</optimize>
+          <showWarnings>true</showWarnings>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <pomDependencies>consider</pomDependencies>
+          <environments>
+            <environment>
+              <os>linux</os>
+              <ws>gtk</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>linux</os>
+              <ws>gtk</ws>
+              <arch>aarch64</arch>
+            </environment>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>macosx</os>
+              <ws>cocoa</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>macosx</os>
+              <ws>cocoa</ws>
+              <arch>aarch64</arch>
+            </environment>
+          </environments>
+          <target>
+            <artifact>
+              <groupId>com.chirpwow.ide</groupId>
+              <artifactId>com.chirpwow.ide.target</artifactId>
+              <version>1.0.0-SNAPSHOT</version>
+            </artifact>
+          </target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-source-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <distinctSourceRoots>true</distinctSourceRoots>
+          <strictSrcIncludes>false</strictSrcIncludes>
+          <archive>
+            <addMavenDescriptor>false</addMavenDescriptor>
+          </archive>
+        </configuration>
+        <executions>
+          <execution>
+            <id>plugin-source</id>
+            <goals>
+              <goal>plugin-source</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>feature-source</id>
+            <phase>package</phase>
+            <goals>
+              <goal>feature-source</goal>
+            </goals>
+            <configuration>
+              <excludes>
+                <plugin id="com.google.guava" />
+                <plugin id="com.google.inject" />
+                <plugin id="net.sourceforge.lpg.lpgjavaruntime" />
+                <plugin id="org.apache.batik.bridge" />
+                <plugin id="org.apache.batik.css" />
+                <plugin id="org.apache.batik.dom" />
+                <plugin id="org.apache.batik.dom.svg" />
+                <plugin id="org.apache.batik.ext.awt" />
+                <plugin id="org.apache.batik.parser" />
+                <plugin id="org.apache.batik.pdf" />
+                <plugin id="org.apache.batik.svggen" />
+                <plugin id="org.apache.batik.transcoder" />
+                <plugin id="org.apache.batik.util" />
+                <plugin id="org.apache.batik.util.gui" />
+                <plugin id="org.apache.batik.xml" />
+                <plugin id="org.apache.log4j" />
+                <plugin id="org.apache.commons.lang" />
+                <plugin id="org.eclipse.ant.optional.junit" />
+                <plugin id="org.eclipse.m2m.qvt.oml.project" />
+                <plugin id="org.eclipse.m2m.qvt.oml.runtime" />
+                <plugin id="org.eclipse.remote.proxy.server.linux.x86_64" />
+                <plugin id="org.eclipse.remote.proxy.server.linux.ppc64le" />
+                <plugin id="org.eclipse.remote.proxy.server.macosx.x86_64" />
+                <plugin id="org.eclipse.remote.doc.isv" />
+                <plugin id="org.eclipse.wst.common.project.facet.core" />
+                <plugin id="org.eclipse.xtend.shared.ui" />
+                <plugin id="org.eclipse.xwt.ui.workbench" />
+              </excludes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-p2-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <generateDownloadStatsProperty>true</generateDownloadStatsProperty>
+        </configuration>
+        <executions>
+          <execution>
+            <id>attached-p2-metadata</id>
+            <phase>package</phase>
+            <goals>
+              <goal>p2-metadata</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-p2-repository-plugin</artifactId>
+        <version>${tycho.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-versions-plugin</artifactId>
+        <version>${tycho.version}</version>
+      </plugin>
+    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.3.0</version>
+          <configuration>
+            <encoding>UTF-8</encoding>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+  <!-- More Project Information -->
+  <name>ChirpWow IDE</name>
+  <url>https://www.chirpwow.com/supports/software/</url>
+  <organization>
+    <name>ChirpWow Technology Co., Ltd.</name>
+  </organization>
+  <!-- Environment Settings -->
+  <prerequisites>
+    <maven>3.9.1</maven>
+  </prerequisites>
+  <repositories>
+    <repository>
+      <id>eclipse</id>
+      <url>https://download.eclipse.org/releases/2023-09</url>
+      <layout>p2</layout>
+    </repository>
+  </repositories>
+  <profiles>
+    <!-- Automatic profile for features that shouldn't generate sources -->
+    <profile>
+      <id>feature-no-source</id>
+      <activation>
+        <file>
+          <exists>feature-no-source.properties</exists>
+        </file>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>tycho-source-plugin</artifactId>
+            <version>${tycho.version}</version>
+            <executions>
+              <execution>
+                <id>attach-feature-source</id>
+                <phase>none</phase>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

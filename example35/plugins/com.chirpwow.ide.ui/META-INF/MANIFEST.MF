@@ -1,15 +1,15 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: com.chirpwow.ide;singleton:=true
+Bundle-SymbolicName: com.chirpwow.ide.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: com.chirpwow.ide.Activator
+Bundle-Activator: com.chirpwow.ide.ui.Activator
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: com.chirpwow.ide,
- com.chirpwow.ide.handlers
+Export-Package: com.chirpwow.ide.ui,
+ com.chirpwow.ide.ui.handlers
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime
-Automatic-Module-Name: com.chirpwow.ide
+Automatic-Module-Name: com.chirpwow.ide.ui
 Bundle-ActivationPolicy: lazy

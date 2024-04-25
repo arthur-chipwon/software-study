@@ -7,6 +7,7 @@ Bundle-Activator: com.chirpwow.ide.Activator
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: com.chirpwow.ide
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime
 Automatic-Module-Name: com.chirpwow.ide

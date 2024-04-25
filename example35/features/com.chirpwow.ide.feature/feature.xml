@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.chirpwow.ide.feature"
+      label="%featureName"
+      version="1.0.0.qualifier"
+      provider-name="%providerName">
+
+   <description url="https://www.chirpwow.com/description">
+      %description
+   </description>
+
+   <copyright url="https://www.chirpwow.com/copyright">
+      %copyright
+   </copyright>
+
+   <license url="https://www.chirpwow.com/license">
+      %license
+   </license>
+
+   <plugin
+         id="com.chirpwow.ide.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.chirpwow.ide.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

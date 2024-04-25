@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.chirpwow.ide.feature_1.0.0.qualifier.jar" id="com.chirpwow.ide.feature" version="1.0.0.qualifier">
+      <category name="com.chirpwow.ide.category"/>
+   </feature>
+   <feature url="features/com.chirpwow.ide.feature.source_1.0.0.qualifier.jar" id="com.chirpwow.ide.feature.source" version="1.0.0.qualifier">
+      <category name="com.chirpwow.ide.category"/>
+   </feature>
+   <category-def name="com.chirpwow.ide.category" label="CWIDE Category">
+      <description>
+         com.chirpwow.ide Category
+      </description>
+   </category-def>
+</site>

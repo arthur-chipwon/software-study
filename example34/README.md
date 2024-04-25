@@ -1,7 +1,7 @@
 # ChirpWow Toturials \ Example 34
 
 ## Overview
-This example will demonstrate how to use Maven and Tycho workflow to bulid a stand Eclipse project.
+This example will demonstrate how to use Maven and Tycho workflow to bulid a single plug-in and a single feature within an Eclipse project.
 This example can be used for a Eclipse project preliminary template.
 
 ## Requirements
