@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2023 ChirpWow Technology Co., Ltd.
+
+  This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License 2.0
+  which accompanies this distribution, and is available at
+  https://www.eclipse.org/legal/epl-2.0/
+
+  SPDX-License-Identifier: EPL-2.0
+
+  Contributors:
+    Arthur Hsiao - ChirpWow Tech.
+-->
 <feature
       id="com.chirpwow.ide.feature"
       label="%featureName"
@@ -18,14 +31,14 @@
    </license>
 
    <plugin
-         id="com.chirpwow.ide.core"
+         id="com.chirpwow.ide.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="com.chirpwow.ide.ui"
+         id="com.chirpwow.ide.core"
          download-size="0"
          install-size="0"
          version="0.0.0"
